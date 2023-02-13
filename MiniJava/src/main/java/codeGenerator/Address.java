@@ -28,14 +28,6 @@ public class Address {
     }
 
     public String toString() {
-        switch (type) {
-            case Direct:
-                return num + "";
-            case Indirect:
-                return "@" + num;
-            case Imidiate:
-                return "#" + num;
-        }
-        return num + "";
+        return type.getSymbol() + num;
     }
 }

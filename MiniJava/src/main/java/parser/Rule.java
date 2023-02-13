@@ -27,7 +27,7 @@ public class Rule {
 //        }catch (Exception e){
 //            e.printStackTrace();
 //        }
-        RHS = new ArrayList<GrammarSymbol>();
+        RHS = new ArrayList<>();
         if (splited.length > 1) {
             String[] RHSs = splited[1].split(" ");
             for (String s : RHSs) {

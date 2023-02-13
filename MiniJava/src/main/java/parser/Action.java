@@ -18,7 +18,7 @@ public class Action {
     }
 
     public String toString() {
-        switch (action) {
+        switch (getAction()) {
             case accept:
                 return "acc";
             case shift:

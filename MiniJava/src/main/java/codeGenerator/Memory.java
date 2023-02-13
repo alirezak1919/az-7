@@ -6,26 +6,24 @@ import java.util.ArrayList;
  * Created by mohammad hosein on 6/27/2015.
  */
 public class Memory {
-    private ArrayList<_3AddressCode> codeBlock;
+    private final ArrayList<_3AddressCode> codeBlock;
     private int lastTempIndex;
     private int lastDataAddress;
-    private final int stratTempMemoryAddress = 500;
-    private final int stratDataMemoryAddress = 200;
-    private final int dataSize = 4;
-    private final int tempSize = 4;
 
     public Memory() {
-        codeBlock = new ArrayList<_3AddressCode>();
-        lastTempIndex = stratTempMemoryAddress;
-        lastDataAddress = stratDataMemoryAddress;
+        codeBlock = new ArrayList<>();
+        lastTempIndex = 500;
+        lastDataAddress = 200;
     }
 
     public int getTemp() {
+        int tempSize = 4;
         lastTempIndex += tempSize;
         return lastTempIndex - tempSize;
     }
 
     public int getDateAddress() {
+        int dataSize = 4;
         lastDataAddress += dataSize;
         return lastDataAddress - dataSize;
     }
@@ -58,9 +56,9 @@ public class Memory {
 
 class _3AddressCode {
     public Operation operation;
-    public Address Operand1;
-    public Address Operand2;
-    public Address Operand3;
+    public Address operand1;
+    public Address operand2;
+    public Address operand3;
 
     public _3AddressCode() {
 
@@ -68,20 +66,20 @@ class _3AddressCode {
 
     public _3AddressCode(Operation op, Address opr1, Address opr2, Address opr3) {
         operation = op;
-        Operand1 = opr1;
-        Operand2 = opr2;
-        Operand3 = opr3;
+        operand1 = opr1;
+        operand2 = opr2;
+        operand3 = opr3;
     }
 
     public String toString() {
         if (operation == null) return "";
-        StringBuffer res = new StringBuffer("(");
-        res.append(operation.toString()).append(",");
-        if (Operand1 != null) res.append(Operand1.toString());
+        StringBuilder res = new StringBuilder("(");
+        res.append(operation).append(",");
+        if (operand1 != null) res.append(operand1);
         res.append(",");
-        if (Operand2 != null) res.append(Operand2.toString());
+        if (operand2 != null) res.append(operand2);
         res.append(",");
-        if (Operand3 != null) res.append(Operand3.toString());
+        if (operand3 != null) res.append(operand3);
         res.append(")");
 
         return res.toString();

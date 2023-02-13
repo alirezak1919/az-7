@@ -5,5 +5,17 @@ package codeGenerator;
  */
 
 public enum TypeAddress {
-    Direct, Indirect, Imidiate
+    Direct(""),
+    Indirect("@"),
+    Immediate("#");
+
+    TypeAddress(String symbol) {
+        this.symbol = symbol;
+    }
+
+    private final String symbol;
+
+    public String getSymbol() {
+        return symbol;
+    }
 }
