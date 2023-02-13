@@ -79,8 +79,8 @@ public class Parser {
                         break;
                 }
                 Log.print("");
-            } catch (Exception ignored) {
-                ignored.printStackTrace();
+            } catch (Exception ex) {
+                ex.printStackTrace();
 //                boolean find = false;
 //                for (NonTerminal t : NonTerminal.values()) {
 //                    if (parseTable.getGotoTable(parsStack.peek(), t) != -1) {
@@ -98,6 +98,6 @@ public class Parser {
 //                    parsStack.pop();
             }
         }
-        if (!ErrorHandler.hasError) cg.printMemory();
+        if (!ErrorHandler.hasError()) cg.printMemory();
     }
 }
