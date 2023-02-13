@@ -7,8 +7,12 @@ package errorHandler;
 public class ErrorHandler {
     private static boolean hasError = false;
 
-    public static void printError(String msg) {
+    public static void reportAndPrintError(String msg) {
         hasError = true;
+        printError(msg);
+    }
+
+    private static void printError(String msg) {
         System.out.println(msg);
     }
 
