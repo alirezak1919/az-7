@@ -1,14 +1,20 @@
 package parser;
 
 public class Action {
-    public act action;
-    //if action = shift : number is state
-    //if action = reduce : number is number of rule
-    public int number;
+    private final Act action;
+    private final int number;
 
-    public Action(act action, int number) {
+    public Action(Act action, int number) {
         this.action = action;
         this.number = number;
+    }
+
+    public Act getAction() {
+        return action;
+    }
+
+    public int getNumber() {
+        return number;
     }
 
     public String toString() {
@@ -24,6 +30,6 @@ public class Action {
     }
 }
 
-enum act {
+enum Act {
     shift, reduce, accept
 }
